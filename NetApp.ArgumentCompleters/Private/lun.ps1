@@ -1,5 +1,4 @@
-$script:__lunOsTypeEnum = (Invoke-NcSystemApi -Request '<lun-os-type-list/>').results.ostypes.'system-api-enum-value-info'.value
-<# $script:__lunOsTypeEnum = @(
+$script:__lunOsTypeEnum = @(
     'aix'
     'hpux'
     'hyper_v'
@@ -20,5 +19,3 @@ Register-ArgumentCompleter -CommandName New-NcLun -ParameterName OsType -ScriptB
         [System.Management.Automation.CompletionResult]::new($_, $_, 'ParameterValue', $_)
     }
 }
-
-

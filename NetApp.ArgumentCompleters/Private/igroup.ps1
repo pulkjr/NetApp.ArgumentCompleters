@@ -10,7 +10,9 @@ Register-ArgumentCompleter -CommandName New-NcIgroup -ParameterName Protocol -Sc
     }
 }
 
-$script:__igroupOsTypeEnum = (Invoke-NcSystemApi -Request '<igroup-os-type-list/>').results.ostypes.'system-api-enum-value-info'.value
+$script:__igroupOsTypeEnum = @(
+    'vmware'
+)
 
 Register-ArgumentCompleter -CommandName New-NcIgroup -ParameterName Type -ScriptBlock {
     param ($commandName, $parameterName, $wordToComplete, $commandAst, $fakeBoundParameter)
